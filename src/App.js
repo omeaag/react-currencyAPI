@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useEffect, useState } from "react";
+import Currency from "./Currency";
 
 function App() {
+  const [age, setAge] = useState(0);
+  const increament = () => setAge(age + 1);
+  const decrement = () => setAge(age - 1);
+
+  useEffect(() => {
+    console.log(`age chanced ${age}`);
+  }, [age]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Currency />
     </div>
   );
 }
